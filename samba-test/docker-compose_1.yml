@@ -1,0 +1,11 @@
+services:
+  samba:
+    image: dperson/samba
+    container_name: samba_prueba
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - /datos/proyectos:/shared:rw
+    environment:
+      - USER=invitado;prueba123
+      - SHARE=proyectos;/shared;yes;no;no;Invitado
